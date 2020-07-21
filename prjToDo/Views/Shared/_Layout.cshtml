@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--指定網頁畫面能隨裝置的螢幕自動做縮放-->
+    <title>@ViewBag.Title - 待辦事項管理網站</title> <!--此處@ViewBag.Title在Index.cshtml已指定為"待辦事項"-->
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" /> <!--bootstap's CSS 樣式-->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" /> <!--bootstap's CSS 樣式-->
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <!--頁首的巡覽列-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("待辦事項管理網站", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--網頁內文-->
+    <div class="container body-content">
+        <!--RenderBody View檢視頁面會放入此處與版面配置業進行合併-->
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - 待辦事項管理網站</p> <!--取得系統年分-->
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

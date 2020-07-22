@@ -42,7 +42,8 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.fId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.fId })
+            @Html.ActionLink("Delete", "Delete", new { id=item.fId }
+                                , new { onclick = "return confirm('確定要刪除嗎？')"}) <!--警告視窗-->
         </td>
     </tr>
 }
